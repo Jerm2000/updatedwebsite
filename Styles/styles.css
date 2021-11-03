@@ -1,0 +1,287 @@
+* {
+    box-sizing: border-box;
+}
+
+:root {
+    --h1Color: #D70845;
+    --mainTextColor: #856827;
+    --h2Color: #7C6B2E;
+    --h3Color: #1d3623;
+    --inTextLinks: #203D3F;
+    --footerColor: #C59B3A;
+    --overlay: rgba(0, 0, 0, 0.3);
+    --cardsOverlay: rgba(0,0,0,0.5);
+
+    background-color: #EEEEEE;
+}
+
+main {
+    max-width: 50rem;
+    padding-bottom: 5rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    align-self: center;
+  }
+
+body.main main {
+    max-width: 60rem;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Nunito Sans', sans-serif;
+    color: var(--mainTextColor);
+    line-height: 1.5;
+    overflow-x: hidden;
+}
+
+footer {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    background-color: var(--inTextLinks);
+    color: var(--footerColor)
+}
+
+h1 {
+    font-family: 'Halant', serif;
+    color:var(--h1Color);
+    font-size: 50px;
+    line-height: 1.2;
+}
+
+h2 {
+font-family: 'Spectral', serif;
+color: var(--h2Color);
+line-height: 1.2;
+text-align: center;
+font-size: 35px;
+}
+
+h3 {
+font-family: 'Karla', sans-serif;
+color: var(--h3Color);
+line-height: 1.2;
+font-size: 30px;
+}
+
+a {
+    color: var(--h3Color);
+    text-decoration: none;
+}
+
+a:visited {
+    color: var(--mainTextColor);
+}
+
+a:hover {
+    color: black;
+}
+
+a.inText {
+    color:var(--inTextLinks);
+}
+
+img {
+    width:100%;
+    display: block;
+    padding-left: 0rem;
+    padding-right: 0rem;
+}
+
+.svg {
+    width: 300px;
+    height: 500px;
+}
+
+.button {
+    background-color: var(--h1Color);
+    color: var(--h3Color);
+    font-size: 20px;
+    border-radius: 2px;
+    display: inline-block;
+    padding: 8px 15px;
+    text-align: center;
+    height:45px;
+    width: 200px;
+}
+
+.button:hover {
+    cursor: pointer;
+    font-size: 21px;
+}
+
+.hero {
+    position: relative;
+}
+
+.hero p {
+    text-align: center;
+    font-size: 1.75rem;
+    text-shadow: 2px 2px 4px #000;
+}
+
+.hero .overlay {
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    flex-direction:column;
+    top:0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--overlay);
+}
+
+.hero h1 {
+    font-size: 4rem;
+    margin: 0;
+    text-align: center;
+    text-shadow: 2px 2px 4px #000;
+}
+
+aside {
+    position: relative;
+    background-color:var(--inTextLinks);
+    width: 100vw;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+}
+
+aside p {
+    display: flex;
+    text-align: center;
+    padding-left: 10rem;
+    padding-right: 10rem;
+    padding-top: 8rem;
+    padding-bottom: 8rem;
+    font-size: 30px;
+}
+
+/* Card Styles */
+.cards {
+    display: flex;
+    object-fit: cover;
+    padding-top: 5rem;
+    flex-direction: column; 
+    gap: 2rem;
+}
+
+.cards .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color:var(--cardsOverlay);
+    opacity: 0;
+    font-size: 30px;
+    transition: opacity 300ms;
+}
+
+.cards p {
+    text-align: center;
+    margin: 2rem;
+    color: lightgrey;
+    text-shadow: 1px 1px 1px black;
+}
+
+.card {
+    position: relative;
+}
+
+.card:hover {
+    cursor: pointer;
+}
+
+.card:hover .overlay {
+opacity: 1;
+}
+
+/* panel */
+.panel {
+    display: flex;
+    flex-direction: column;
+    margin-top: 3rem;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+}
+
+.panel .image-wrapper {
+    order: -2;
+    flex: 0 1 40%;
+}
+
+.panel h3 {
+    margin: 0;
+}
+
+.panel .text-wrapper {
+    flex: 1 0 60%;
+}
+
+.panel img {
+    height: 100%;
+    object-position: cover;
+    max-height: 300px;
+}
+
+.menulist {
+    list-style-type: none;
+    border-bottom: 3px solid transparent;
+}
+
+.menulist:hover {
+    border-bottom: 3px solid rgba(0, 0, 0, 0.7);
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content:center;
+    gap: 35px;
+    padding: 0px;
+    font-size: 20px;
+    border-bottom: 5px transparent;
+}
+
+/* Loader Animation */
+
+
+
+@media (min-width:700px) {
+    .panel {
+        flex-direction: row;
+        gap: 2rem;
+    }
+    
+    .panel h2 {
+        margin: 0;
+    }
+
+    .panel .left {
+        order: -3;
+    }
+    .cards {
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+
+    .cards .card {
+        flex: 1 1 45%;
+    }
+}
+
+@media (min-width: 900px) {
+    .cards {
+        flex-wrap: nowrap;
+    }
+}
+
+/* How can I get the card text to not be dark and to not leave the flexbox 
+Lists for nav are not consistent between pages*/
